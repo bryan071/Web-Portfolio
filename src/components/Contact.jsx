@@ -13,7 +13,7 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
