@@ -27,7 +27,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        A Frontend Developer & Designer
+        A Website Developer
       </motion.h2>
 
       <motion.p
@@ -58,7 +58,7 @@ export default function Hero() {
           size="lg"
           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium transition-all"
         >
-          <a href="/resume.pdf">Download CV</a>
+          <a href="src/assets/BryanBulan_Resume.pdf">Download CV</a>
         </Button>
       </motion.div>
 
@@ -78,7 +78,7 @@ export default function Hero() {
           <Github />
         </a>
         <a
-          href="https://linkedin.com/"
+          href="https://www.linkedin.com/in/bryan-bulan-828659374/"
           target="_blank"
           rel="noreferrer"
           className="hover:text-primary transition-colors"
@@ -87,7 +87,7 @@ export default function Hero() {
           <Linkedin />
         </a>
         <a
-          href="https://facebook.com/"
+          href="https://www.facebook.com/bryan.m.bulan/"
           target="_blank"
           rel="noreferrer"
           className="hover:text-primary transition-colors"

@@ -20,7 +20,7 @@ export default function About() {
         <div className="flex-shrink-0">
           <img
             src={profileImage}
-            alt="Bryan - Frontend Developer"
+            alt="Bryan - Website Developer"
             className="w-56 h-56 object-cover rounded-full shadow-xl border-4 border-primary animate-glow"
           />
         </div>
@@ -36,7 +36,7 @@ export default function About() {
           </h2>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
             Hi! I'm <span className="font-semibold text-foreground">Bryan</span>, an aspiring
-            frontend developer passionate about building modern and responsive
+            Website developer passionate about building modern and responsive
             web applications. I enjoy turning ideas into visually appealing and
             user-friendly websites. I love learning new technologies and
             improving my craft every day. 🚀

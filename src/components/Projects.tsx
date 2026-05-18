@@ -1,25 +1,25 @@
 import { Code } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import portfolioImage from "@/assets/portfolio-project.jpg";
+import portfolioImage from "@/assets/sip.jpg";
 import ecommerceImage from "@/assets/ecommerce-project.jpg";
 import weatherImage from "@/assets/weather-project.jpg";
 
 const projects = [
   {
-    title: "Personal Portfolio",
-    desc: "A responsive portfolio website built with React and Tailwind CSS.",
+    title: "Photo Editing Portfolio",
+    desc: "Showcasing photo editing projects.",
     image: portfolioImage,
     demo: "#",
   },
   {
-    title: "E-Commerce App",
-    desc: "A modern online shopping app with Firebase and React.",
+    title: "Farm-Aid: E-commerce App",
+    desc: "A platform to buy and sell farm products that will help farmers reach more customers.",
     image: ecommerceImage,
     demo: "#",
   },
   {
-    title: "Weather Dashboard",
-    desc: "A clean weather dashboard with real-time data.",
+    title: "Company Mapping",
+    desc: "A system that will monitor and verify the information of companies.",
     image: weatherImage,
     demo: "#",
   },
