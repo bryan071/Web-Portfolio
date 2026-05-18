@@ -2,7 +2,7 @@ import { Code } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import portfolioImage from "@/assets/sip.jpg";
 import ecommerceImage from "@/assets/ecommerce-project.jpg";
-import weatherImage from "@/assets/weather-project.jpg";
+import weatherImage from "@/assets/company-mapping.jpg";
 
 const projects = [
   {
