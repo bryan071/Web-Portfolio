@@ -11,8 +11,8 @@ import vegasLogo from "../assets/logos/Sony Vegas.png";
 const showcaseImages = [
   { image: "showcase1.jpg", category: "Photo Editing" },
   { image: "showcase2.jpg", category: "Graphic Design" },
-  { video: "PressKit_TableTop.mp4", thumbnail: "tabletop.png", category: "Video Editing" },
-  { video: "GameDevFinals.mp4", thumbnail: "3dgame.png", category: "Video Editing" },
+  { video: "17_YLKZYbUzGv4cjafNNuldW2lNRuNYE7", thumbnail: "tabletop.png", category: "Video Editing" },
+  { video: "1lRu6_Fn875cenCZOJule4tJj1h3Zeiec", thumbnail: "3dgame.png", category: "Video Editing" },
 ];
 
 const categories = ["All", "Photo Editing", "Graphic Design", "Video Editing"];
@@ -169,10 +169,10 @@ export default function PhotoEditing() {
                 className="max-h-[88vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
               />
             ) : (
-              <video
-                src={`${import.meta.env.BASE_URL}showcase/${filteredImages[selectedImage]?.video}`}
-                controls
-                className="max-h-[88vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+              <iframe
+                src={`https://drive.google.com/file/d/${filteredImages[selectedImage]?.video}/preview`}
+                allow="autoplay"
+                className="w-[90vw] h-[80vh] rounded-xl shadow-2xl"
               />
             )}
           </div>
