@@ -11,8 +11,8 @@ import vegasLogo from "../assets/logos/Sony Vegas.png";
 const showcaseImages = [
   { image: "showcase1.jpg", category: "Photo Editing" },
   { image: "showcase2.jpg", category: "Graphic Design" },
-  { video: "17_YLKZYbUzGv4cjafNNuldW2lNRuNYE7", thumbnail: "tabletop.png", category: "Video Editing" },
-  { video: "1lRu6_Fn875cenCZOJule4tJj1h3Zeiec", thumbnail: "3dgame.png", category: "Video Editing" },
+  { youtubeId: "ijV85CaZKyE", thumbnail: "tabletop.png", category: "Video Editing" },
+  { youtubeId: "Co8m8w-wa50", thumbnail: "3dgame.png", category: "Video Editing" },
 ];
 
 const categories = ["All", "Photo Editing", "Graphic Design", "Video Editing"];
@@ -77,7 +77,7 @@ export default function PhotoEditing() {
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mb-16">
           {filteredImages.map((item, index) => (
             <div
-              key={item.image || item.video}
+              key={item.image || item.youtubeId}
               onClick={() => setSelectedImage(index)}
               className="break-inside-avoid relative overflow-hidden rounded-2xl border border-border shadow-lg group cursor-pointer animate-in fade-in zoom-in duration-500"
             >
@@ -87,7 +87,7 @@ export default function PhotoEditing() {
                 className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
-              {item.video && (
+             {item.youtubeId && (
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-all">
                     <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -170,8 +170,10 @@ export default function PhotoEditing() {
               />
             ) : (
               <iframe
-                src={`https://drive.google.com/file/d/${filteredImages[selectedImage]?.video}/preview`}
-                allow="autoplay"
+                src={`https://www.youtube.com/embed/${filteredImages[selectedImage]?.youtubeId}`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowFullScreen
                 className="w-[90vw] h-[80vh] rounded-xl shadow-2xl"
               />
             )}
