@@ -9,8 +9,8 @@ import rsblackImage from "@/assets/rsnblack.png";
 
 const projects = [
   {
-    title: "Photo Editing Portfolio",
-    desc: "Showcasing photo editing projects.",
+    title: "Creatives Portfolio",
+    desc: "A creative portfolio showcasing my graphic design, photo editing, and video editing projects.",
     image: portfolioImage,
     link: "/photo-editing",
   },
