@@ -26,3 +26,4 @@ dist-ssr
 # Large video files
 public/showcase/GameDevFinals.mp4
 public/showcase/PressKit_TableTop.mp4
+public/showcase/*.mp4
