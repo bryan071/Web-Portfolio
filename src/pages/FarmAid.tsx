@@ -43,7 +43,49 @@ export default function FarmAid() {
           Farm-Aid: E-commerce App
         </h1>
 
-        <h2 className="text-2xl font-semibold mb-4">
+       <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+  
+  {/* Role Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
+                          bg-primary/10 border border-primary/20 backdrop-blur-md
+                          shadow-sm">
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <p className="font-semibold tracking-wide text-primary">
+              Technical Lead & Full Stack Developer
+            </p>
+          </div>
+
+  {/* Description */}
+      <div className="space-y-5">
+        <p className="text-foreground/90">
+          <span className="font-semibold text-primary">FARM-AID</span> is a 
+          capstone Android application built with Kotlin and Firebase, created 
+          to help farmers sell crops online and connect with more customers 
+          through a modern digital platform.
+        </p>
+
+        <p>
+          I led the development of the application by implementing core system 
+          features, designing the user experience, and integrating Firebase 
+          services for authentication, real-time database updates, and cloud storage.
+        </p>
+
+        <p>
+          The platform includes product listings, image uploads, order management, 
+          and live data synchronization, providing farmers with a simple and 
+          accessible way to promote and manage their products online.
+        </p>
+
+        <p>
+          FARM-AID was developed to support local farmers by improving market 
+          accessibility and simplifying the buying and selling process through 
+          mobile technology.
+        </p>
+      </div>
+    </div>
+
+      {/* User Manual Preview */}
+        <h2 className="text-2xl font-semibold mb-6 mt-12 text-foreground">
           User Manual Preview
         </h2>
 
@@ -71,18 +113,7 @@ export default function FarmAid() {
           ))}
         </div>
 
-        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-          <p>
-            Farm-Aid is an Android application developed using Kotlin and
-            Firebase. The platform helps farmers sell crops online and connect
-            with more customers.
-          </p>
-
-          <p>
-            The application includes product listings, real-time updates, image
-            uploads, authentication, and order management.
-          </p>
-
+        
           <div>
             <h2 className="text-2xl font-semibold text-foreground mb-8">
               Technologies Used
@@ -114,7 +145,7 @@ export default function FarmAid() {
               ))}
             </div>
           </div>
-        </div>
+        
       </div>
 
      {selectedImage !== null && (

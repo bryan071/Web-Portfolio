@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import reactLogo from "../assets/logos/React.png";
+import tailwindLogo from "../assets/logos/Tailwind_CSS.png";
+import expressjsLogo from "../assets/logos/Expressjs.png";
+import mysqlLogo from "../assets/logos/mysql.png";
+import reactLeafletLogo from "../assets/logos/reactleaflet.png";  
 
 export default function CompanyMapping() {
   return (
@@ -16,39 +21,91 @@ export default function CompanyMapping() {
           Company Mapping
         </h1>
 
-        <img
-          src="src/assets/company-mapping.jpg"
-          alt="Company Mapping"
-          className="w-full rounded-2xl shadow-lg mb-8"
-        />
+        <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
 
-        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            {/* Role Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
+                            bg-primary/10 border border-primary/20 backdrop-blur-md
+                            shadow-sm">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <p className="font-semibold tracking-wide text-primary">
+                Full Stack Developer
+              </p>
+            </div>
 
-          <p>
-            Company Mapping is a web-based system designed to monitor,
-            verify, and manage company information efficiently.
-          </p>
+            {/* Description */}
+            <div className="space-y-5">
+              <p className="text-foreground/90">
+                <span className="font-semibold text-primary">COMPANY MAPPING</span> is an 
+                internship-based web application developed using React, Tailwind CSS, and MySQL, 
+                designed to help monitor, verify, and manage company information through a modern 
+                and interactive platform.
+              </p>
 
-          <p>
-            The system integrates interactive maps to display company locations
-            and uses MySQL for data management.
-          </p>
+              <p>
+                I contributed to the development of the system by building responsive user interfaces, 
+                implementing core functionalities, and integrating backend services and database operations 
+                to ensure smooth and efficient data management.
+              </p>
+
+              <p>
+                The platform also features interactive map integration for real-time company location 
+                visualization, making information more organized, accessible, and user-friendly for 
+                daily operational use.
+              </p>
+
+              <p>
+                Through this project, I gained valuable hands-on experience in full-stack web development, 
+                API integration, dynamic data handling, responsive UI/UX design, and collaborative 
+                development within a professional team environment.
+              </p>
+            </div>
+
+          </div>
+
+        <div className="flex justify-center mb-12 mt-8">
+          <div className="w-full max-w-2xl">
+            <video
+              controls
+              className="w-full rounded-xl shadow-xl border border-primary/10 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 object-cover bg-black"
+            >
+              <source src="src/assets/Company-Mapping.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-3">
+            <h2 className="text-2xl font-semibold text-foreground mb-8">
               Technologies Used
             </h2>
 
-            <ul className="list-disc pl-6 space-y-2">
-              <li>React</li>
-              <li>Tailwind CSS</li>
-              <li>Express.js</li>
-              <li>MySQL</li>
-              <li>React Leaflet</li>
-            </ul>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { name: "React", logo: reactLogo },
+                { name: "Tailwind CSS", logo: tailwindLogo },
+                { name: "Express.js", logo: expressjsLogo },
+                { name: "MySQL", logo: mysqlLogo },
+                { name: "React Leaflet", logo: reactLeafletLogo },
+              ].map((tech) => (
+                <div
+                  key={tech.name}
+                  className="flex flex-col items-center justify-center p-6 rounded-xl bg-card border border-border hover:border-primary/50 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group"
+                >
+                  <div className="w-16 h-16 mb-4 flex items-center justify-center">
+                    <img
+                      src={tech.logo}
+                      alt={tech.name}
+                      className="w-full h-full object-contain group-hover:drop-shadow-lg transition-all duration-300"
+                    />
+                  </div>
+                  <p className="text-foreground font-semibold text-center text-sm leading-tight">
+                    {tech.name}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-
-        </div>
       </div>
     </div>
   );
