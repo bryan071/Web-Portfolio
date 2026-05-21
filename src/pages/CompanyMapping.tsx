@@ -3,7 +3,9 @@ import reactLogo from "../assets/logos/React.png";
 import tailwindLogo from "../assets/logos/Tailwind_CSS.png";
 import expressjsLogo from "../assets/logos/Expressjs.png";
 import mysqlLogo from "../assets/logos/mysql.png";
-import reactLeafletLogo from "../assets/logos/reactleaflet.png";  
+import reactLeafletLogo from "../assets/logos/reactleaflet.png";
+
+const companyMappingVideo = `${import.meta.env.BASE_URL}company-mapping/Company-Mapping.mp4`;
 
 export default function CompanyMapping() {
   return (
@@ -63,17 +65,19 @@ export default function CompanyMapping() {
 
           </div>
 
-        <div className="flex justify-center mb-12 mt-8">
-          <div className="w-full max-w-2xl">
-            <video
-              controls
-              className="w-full rounded-xl shadow-xl border border-primary/10 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 object-cover bg-black"
-            >
-              <source src="src/assets/Company-Mapping.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+        {/* Video Demonstration */}
+            <div className="flex justify-center mb-12 mt-8">
+              <div className="w-full max-w-2xl">
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full rounded-xl shadow-xl border border-primary/10 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 object-cover bg-black"
+                >
+                  <source src={companyMappingVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
 
           <div>
             <h2 className="text-2xl font-semibold text-foreground mb-8">

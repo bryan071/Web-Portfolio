@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 const floatingItems = ["</>", "{ }", "React", "JS", "CSS", "UI"];
 
 const cuteCharacters = [
-  { emoji: "🐱", top: "18%", duration: 14, delay: 0 },
-  { emoji: "🤖", top: "42%", duration: 18, delay: 3 },
-  { emoji: "🐥", top: "68%", duration: 16, delay: 6 },
-  { emoji: "🚀", top: "78%", duration: 20, delay: 9 },
+  { image: `${import.meta.env.BASE_URL}characters/mochi.png`, top: "18%", duration: 14, delay: 0 },
+  { image: `${import.meta.env.BASE_URL}characters/cutie.png`, top: "42%", duration: 18, delay: 3 },
+  { image: `${import.meta.env.BASE_URL}characters/kulet1.png`, top: "68%", duration: 16, delay: 6 },
+  { image: `${import.meta.env.BASE_URL}characters/puslit.png`, top: "78%", duration: 20, delay: 9 },
+  { image: `${import.meta.env.BASE_URL}characters/pichi.png`, top: "88%", duration: 24, delay: 11 },
 ];
 
 export default function Hero() {
@@ -44,41 +45,41 @@ export default function Hero() {
       </div>
 
       {/* Cute Running Characters */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        {cuteCharacters.map((char, index) => (
-          <motion.div
-            key={index}
-            className="absolute text-4xl md:text-5xl select-none opacity-70"
-            style={{ top: char.top }}
-            initial={{ x: "-10vw" }}
-            animate={{
-              x: "110vw",
-              y: [0, -10, 0],
-              rotate: [0, 8, -8, 0],
-            }}
-            transition={{
-              x: {
-                duration: char.duration,
-                repeat: Infinity,
-                ease: "linear",
-                delay: char.delay,
-              },
-              y: {
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-              rotate: {
-                duration: 1.2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-            }}
-          >
-            {char.emoji}
-          </motion.div>
-        ))}
-      </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          {cuteCharacters.map((char, index) => (
+           <motion.img
+              key={index}
+              src={char.image}
+              alt=""
+              className="absolute w-16 h-16 md:w-24 md:h-24 object-contain opacity-80 select-none"
+              style={{ top: char.top }}
+              initial={{ x: "-20vw" }}
+              animate={{
+                x: "110vw",
+                y: [0, -12, 0],
+                rotate: [0, 6, -6, 0],
+              }}
+              transition={{
+                x: {
+                  duration: char.duration,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: char.delay,
+                },
+                y: {
+                  duration: 1,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+                rotate: {
+                  duration: 1.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+              }}
+            />
+          ))}
+        </div>
 
       <motion.h1
         className="text-5xl md:text-7xl font-extrabold mb-4 text-center relative z-10"
