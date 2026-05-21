@@ -2,14 +2,86 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Facebook, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const floatingItems = ["</>", "{ }", "React", "JS", "CSS", "UI"];
+
+const cuteCharacters = [
+  { emoji: "🐱", top: "18%", duration: 14, delay: 0 },
+  { emoji: "🤖", top: "42%", duration: 18, delay: 3 },
+  { emoji: "🐥", top: "68%", duration: 16, delay: 6 },
+  { emoji: "🚀", top: "78%", duration: 20, delay: 9 },
+];
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-background via-background to-secondary/20 text-foreground px-4 relative pt-16"
+      className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-background via-background to-secondary/20 text-foreground px-4 relative pt-16 overflow-hidden"
     >
+      {/* Floating Background Animations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {floatingItems.map((item, index) => (
+          <motion.span
+            key={index}
+            className="absolute text-primary/10 text-3xl md:text-5xl font-bold select-none"
+            style={{
+              left: `${10 + index * 15}%`,
+              top: `${15 + (index % 3) * 25}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, 20, -20, 0],
+              rotate: [0, 8, -8, 0],
+            }}
+            transition={{
+              duration: 6 + index,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            {item}
+          </motion.span>
+        ))}
+      </div>
+
+      {/* Cute Running Characters */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        {cuteCharacters.map((char, index) => (
+          <motion.div
+            key={index}
+            className="absolute text-4xl md:text-5xl select-none opacity-70"
+            style={{ top: char.top }}
+            initial={{ x: "-10vw" }}
+            animate={{
+              x: "110vw",
+              y: [0, -10, 0],
+              rotate: [0, 8, -8, 0],
+            }}
+            transition={{
+              x: {
+                duration: char.duration,
+                repeat: Infinity,
+                ease: "linear",
+                delay: char.delay,
+              },
+              y: {
+                duration: 1,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+              rotate: {
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+          >
+            {char.emoji}
+          </motion.div>
+        ))}
+      </div>
+
       <motion.h1
-        className="text-5xl md:text-7xl font-extrabold mb-4 text-center"
+        className="text-5xl md:text-7xl font-extrabold mb-4 text-center relative z-10"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -22,7 +94,7 @@ export default function Hero() {
       </motion.h1>
 
       <motion.h2
-        className="text-xl md:text-2xl mb-6 text-muted-foreground text-center"
+        className="text-xl md:text-2xl mb-6 text-muted-foreground text-center relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -31,16 +103,18 @@ export default function Hero() {
       </motion.h2>
 
       <motion.p
-        className="max-w-2xl text-center text-muted-foreground mb-8 leading-relaxed"
+        className="max-w-2xl text-center text-muted-foreground mb-8 leading-relaxed relative z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        I build modern, responsive, and fast web applications using React, Tailwind CSS, and other powerful frontend tools.
+        “I develop modern, responsive, and high-performance websites and web
+        applications using React, Tailwind CSS, and other advanced web
+        development technologies.”
       </motion.p>
 
       <motion.div
-        className="flex flex-wrap gap-4 mb-10 justify-center"
+        className="flex flex-wrap gap-4 mb-10 justify-center relative z-10"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
@@ -52,24 +126,27 @@ export default function Hero() {
         >
           <a href="#projects">View Projects</a>
         </Button>
+
         <Button
           asChild
           variant="outline"
           size="lg"
           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium transition-all"
         >
-          <a href="src/assets/BryanBulan_Resume.pdf">Download CV</a>
+          <a href={`${import.meta.env.BASE_URL}BryanBulan_Resume.pdf`} download>
+            Download CV
+          </a>
         </Button>
       </motion.div>
 
       <motion.div
-        className="flex gap-6 text-2xl"
+        className="flex gap-6 text-2xl relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
         <a
-          href="https://github.com/"
+          href="https://github.com/bryan071"
           target="_blank"
           rel="noreferrer"
           className="hover:text-primary transition-colors"
@@ -77,6 +154,7 @@ export default function Hero() {
         >
           <Github />
         </a>
+
         <a
           href="https://www.linkedin.com/in/bryan-bulan-828659374/"
           target="_blank"
@@ -86,6 +164,7 @@ export default function Hero() {
         >
           <Linkedin />
         </a>
+
         <a
           href="https://www.facebook.com/bryan.m.bulan/"
           target="_blank"
@@ -97,9 +176,8 @@ export default function Hero() {
         </a>
       </motion.div>
 
-      {/* Scroll Down Indicator */}
       <motion.div
-        className="absolute bottom-10 text-primary cursor-pointer animate-bounce"
+        className="absolute bottom-10 text-primary cursor-pointer animate-bounce z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}

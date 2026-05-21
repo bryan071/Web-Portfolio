@@ -1,15 +1,19 @@
-import { Code2, Palette, Database, GitBranch } from "lucide-react";
+import { Code2, Palette, Database, GitBranch, FileCode, Flame, Zap, Coffee, Braces } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import profileImage from "@/assets/profile.jpg";
 
 const skills = [
-  { name: "HTML5", icon: Code2, color: "text-orange-500" },
+  { name: "HTML5", icon: FileCode, color: "text-orange-500" },
   { name: "CSS3", icon: Palette, color: "text-blue-500" },
-  { name: "JavaScript", icon: Code2, color: "text-yellow-500" },
+  { name: "JavaScript", icon: Zap, color: "text-yellow-500" },
   { name: "React", icon: Code2, color: "text-cyan-500" },
   { name: "Tailwind", icon: Palette, color: "text-cyan-400" },
-  { name: "Firebase", icon: Database, color: "text-amber-500" },
+  { name: "Firebase", icon: Flame, color: "text-amber-500" },
   { name: "GitHub", icon: GitBranch, color: "text-foreground" },
+  { name: "Kotlin", icon: Code2, color: "text-purple-500" },
+  { name: "PHP", icon: FileCode, color: "text-indigo-500" },
+  { name: "MySQL", icon: Database, color: "text-blue-600" },
+  { name: "Java", icon: Coffee, color: "text-red-500" },
 ];
 
 export default function About() {
