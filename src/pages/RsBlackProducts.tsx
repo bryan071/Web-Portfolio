@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import htmlLogo from "../assets/logos/html.png";
 import cssLogo from "../assets/logos/css.png";
 import javascriptLogo from "../assets/logos/javascript.png";
+import rsBlackImage from "../assets/rsnblack.png";
 
 export default function RsBlackProducts() {
   return (
@@ -46,13 +47,13 @@ export default function RsBlackProducts() {
         </div>
 
         {/* Project Image */}
-        <div className="mt-12 mb-16 max-w-4xl">
-          <img
-            src="src/assets/rsnblack.png" 
-            alt="R's Black Products Screenshot"
-            className="w-full rounded-lg border border-border shadow-lg"
-          />
-        </div>
+            <div className="mt-12 mb-16 max-w-4xl">
+            <img
+                src={rsBlackImage}
+                alt="R's Black Products Screenshot"
+                className="w-full rounded-lg border border-border shadow-lg"
+            />
+            </div>
 
         {/* Technologies */}
         <div>

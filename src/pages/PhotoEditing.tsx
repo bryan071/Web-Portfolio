@@ -11,6 +11,8 @@ import vegasLogo from "../assets/logos/Sony Vegas.png";
 const showcaseImages = [
   { image: "showcase1.jpg", category: "Photo Editing" },
   { image: "showcase2.jpg", category: "Graphic Design" },
+  { video: "PressKit_TableTop.mp4", thumbnail: "tabletop.png", category: "Video Editing" },
+  { video: "GameDevFinals.mp4", thumbnail: "3dgame.png", category: "Video Editing" },
 ];
 
 const categories = ["All", "Photo Editing", "Graphic Design", "Video Editing"];
@@ -44,12 +46,11 @@ export default function PhotoEditing() {
         </Link>
 
         <h1 className="text-5xl font-bold mt-8 mb-6">
-          Photo Editing Portfolio
+          Creatives Portfolio
         </h1>
 
         <p className="text-lg text-muted-foreground mb-10 max-w-3xl">
-          This portfolio showcases my photo editing, graphic design, and creative
-          visual composition projects.
+          This portfolio showcases my photo editing, graphic design, and video editing projects.
         </p>
 
         {/* Category Filters */}
@@ -76,15 +77,25 @@ export default function PhotoEditing() {
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mb-16">
           {filteredImages.map((item, index) => (
             <div
-              key={item.image}
+              key={item.image || item.video}
               onClick={() => setSelectedImage(index)}
               className="break-inside-avoid relative overflow-hidden rounded-2xl border border-border shadow-lg group cursor-pointer animate-in fade-in zoom-in duration-500"
             >
               <img
-                src={`${import.meta.env.BASE_URL}showcase/${item.image}`}
+                src={`${import.meta.env.BASE_URL}showcase/${item.image || item.thumbnail}`}
                 alt={item.category}
                 className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+
+              {item.video && (
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-all">
+                    <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              )}
 
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center">
                 <Maximize className="w-8 h-8 text-white mb-2" />
@@ -151,11 +162,19 @@ export default function PhotoEditing() {
               {selectedImage + 1} of {filteredImages.length}
             </p>
 
-            <img
-              src={`${import.meta.env.BASE_URL}showcase/${filteredImages[selectedImage].image}`}
-              alt={filteredImages[selectedImage].category}
-              className="max-h-[88vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
-            />
+            {filteredImages[selectedImage]?.image ? (
+              <img
+                src={`${import.meta.env.BASE_URL}showcase/${filteredImages[selectedImage].image}`}
+                alt={filteredImages[selectedImage].category}
+                className="max-h-[88vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+              />
+            ) : (
+              <video
+                src={`${import.meta.env.BASE_URL}showcase/${filteredImages[selectedImage]?.video}`}
+                controls
+                className="max-h-[88vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+              />
+            )}
           </div>
 
           <button
