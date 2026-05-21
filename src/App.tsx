@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import PhotoEditing from "./pages/PhotoEditing";
 import FarmAid from "./pages/FarmAid";
 import CompanyMapping from "./pages/CompanyMapping";
+import RsBlackProducts from "./pages/RsBlackProducts";
 
 const queryClient = new QueryClient();
 
@@ -93,6 +94,13 @@ function AnimatedRoutes() {
             </PageTransition>
           }
         />
+
+        <Route 
+          path="/rsblackproducts" 
+          element={
+          <PageTransition>
+             <RsBlackProducts />
+          </PageTransition>} />
 
         <Route
           path="*"

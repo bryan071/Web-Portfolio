@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import portfolioImage from "@/assets/sip.jpg";
 import ecommerceImage from "@/assets/ecommerce-project.jpg";
 import companyMapping from "@/assets/company-mapping.jpg";
+import rsblackImage from "@/assets/rsnblack.png";
 
 const projects = [
   {
@@ -24,6 +25,13 @@ const projects = [
     desc: "A system that will monitor and verify the information of companies.",
     image: companyMapping,
     link: "/company-mapping",
+  },
+
+  {
+    title: "R's Black Products",
+    desc: "A modern e-commerce vape shop website with a responsive UI, smooth product browsing, and stylish vape product showcase features.",
+    image: rsblackImage,
+    link: "/rsblackproducts",
   },
 ];
 

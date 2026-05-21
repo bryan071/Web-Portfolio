@@ -7,7 +7,7 @@ const floatingItems = ["</>", "{ }", "React", "JS", "CSS", "UI"];
 const cuteCharacters = [
   { image: `${import.meta.env.BASE_URL}characters/mochi.png`, top: "18%", duration: 14, delay: 0 },
   { image: `${import.meta.env.BASE_URL}characters/cutie.png`, top: "42%", duration: 18, delay: 3 },
-  { image: `${import.meta.env.BASE_URL}characters/kulet1.png`, top: "68%", duration: 16, delay: 6 },
+  { image: `${import.meta.env.BASE_URL}characters/kulet1.png`, top: "58%", duration: 16, delay: 6 },
   { image: `${import.meta.env.BASE_URL}characters/puslit.png`, top: "78%", duration: 20, delay: 9 },
   { image: `${import.meta.env.BASE_URL}characters/pichi.png`, top: "88%", duration: 24, delay: 11 },
 ];
